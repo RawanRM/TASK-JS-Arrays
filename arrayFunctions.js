@@ -9,8 +9,16 @@
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
 function isArrayLengthOdd(numbers) {
-  // Your code here
+  let num = numbers.length;
+  if (num % 2 === 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
+
+let nA = [2, 3, 4, 5, 6, 7];
+isArrayLengthOdd(nA);
 
 /**
  * isArrayLengthEven(numbers):
@@ -23,8 +31,16 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+  let num = numbers.length;
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+let nB = [2, 3, 4];
+isArrayLengthEven(nB);
 
 /**
  * addLailaToArray(instructors):
@@ -35,8 +51,11 @@ function isArrayLengthEven(numbers) {
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
 function addLailaToArray(instructors) {
-  // Your code here
+  instructors.push("Laila");
+  return instructors;
 }
+let a1 = ["Mshary", "Hasan"];
+addLailaToArray(a1);
 
 /**
  * eliminateTeam(teams):
@@ -47,8 +66,11 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+  let tempo = teams.pop();
+  return tempo;
 }
+let a2 = ["Brazil", "Germany", "Italy"];
+eliminateTeam(a2);
 
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
@@ -61,9 +83,14 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+  if (isArrayLengthEven(fruits)) {
+    return fruits.splice(fruits.length / 2, fruits.length / 2); //SPLIES CUTS AND RETURNS THE CUT PART
+  } else {
+    return fruits = [];
+  }
 }
-
+let a3 = ["apple", "orange", "banana", "kiwi"];
+console.log(secondHalfOfArrayIfItIsEven(a3));
 /**
  * youGottaCalmDown(shout):
  * - receives a string `shout`
@@ -79,8 +106,13 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout) {
-  // Your code here
+  let num = shout.indexOf("!");
+  return shout.slice(0, (num + 1));
 }
+
+let words = "HI!!!!";
+youGottaCalmDown(words);
+
 
 module.exports = {
   isArrayLengthOdd,
